@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>vietnamairlines</title>
+	<!-- CSS only -->
+	
+
+
+	
+	
+
+	<!-- Customized Bootstrap Stylesheet -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Template Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.pb-100 {
+			padding-bottom: 100px;
+		}
+
+		.pt-100 {
+			padding-top: 100px;
+		}
+
+		.mb-100 {
+			margin-bottom: 100px;
+		}
+
+		a {
+			text-decoration: none;
+			color: #333;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		.section-title {
+			position: relative;
+		}
+
+		.section-title p {
+			font-size: 16px;
+			margin-bottom: 5px;
+			font-weight: 400;
+		}
+
+		.section-title h4 {
+			font-size: 40px;
+			font-weight: 600;
+			text-transform: capitalize;
+			position: relative;
+			padding-bottom: 20px;
+			display: inline-block;
+		}
+
+		.section-title h4::before {
+			position: absolute;
+			content: "";
+			width: 80px;
+			height: 2px;
+			background-color: #d8d8d8;
+			bottom: 0;
+			left: 50%;
+			margin-left: -40px;
+		}
+
+		.section-title h4::after {
+			position: absolute;
+			content: "";
+			width: 50px;
+			height: 2px;
+			background-color: #FF7200;
+			left: 0;
+			bottom: 0;
+			left: 50%;
+			margin-left: -25px;
+		}
+
+		.contact {
+			background-image: url('https://cafefcdn.com/zoom/700_438/203337114487263232/2023/1/22/photo1674397633959-16743976342531189671400.png');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+			position: relative;
+			z-index: 2;
+			color: #fff;
+		}
+
+		.contact-form input,
+		textarea {
+			width: 100%;
+			border: 1px solid rgb(231, 235, 237);
+			padding: 5px 10px;
+			text-transform: capitalize;
+			margin-top: 15px;
+			background-color: transparent;
+			color: #fff;
+		}
+
+		.contact:before {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: #333;
+			z-index: -1;
+			opacity: .70;
+
+		}
+
+		.single-contact {
+			text-align: left;
+			position: relative;
+			padding-left: 70px;
+			margin-bottom: 50px;
+			margin-top: 10px;
+		}
+
+		.single-contact i.fa {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			background-color: #FEA116;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			border-radius: 3px;
+		}
+
+		
+		
+
+		.contact-form input[type="submit"] {
+			background-color: #FF7200;
+			border: 0px;
+			cursor: pointer;
+			font-size: 16px;
+			-webkit-transition: .4s;
+			transition: .4s
+		}
+
+		.contact-form input[type="submit"]:hover {
+			background-color: #FEA116
+		}
+
+		.contact-form input:focus,
+		textarea:focus {
+			border-color: #CC5B00
+		}
+	</style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg   text-white px-lg-3 py-lg-0 shadow-sm sticky-top" style="background:rgb(1, 15, 32)">
+        <div class="container-fluid">
+        <img class=" " src="images/Logo.png" alt="Image">
+          <a class="navbar-brand me-5 fw-bold fs-4 h-font " style="color:rgb(73, 142, 246)" href="./search">VIETNAM AIRLINE</a>
+          <nav class="navbar  navbar-dark p-3 p-lg-0"> 
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            </nav>
+
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:30px">
+                <div class="text-header" >
+              <li class="nav-item "style="margin-left:10px">
+                <a class=" nav-link active text-white fw-bold fs-6 h-font " aria-current="page" href="./search">HOME</a>
+              </li>
+                </div>
+              <p></p>
+              
+              <div class="text-header">
+              <li class="nav-item"style="margin-left:10px">
+                <a class="nav-link me-2 text-white fw-bold fs-6 h-font"  href="./services">SERVICES</a>
+              </li>
+              </div>
+              <p></p>
+              <div class="text-header">
+              <li class="nav-item"style="margin-left:10px">
+                <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./contact">CONTACT US</a>
+              </li>
+              </div>
+              <p></p>
+              <div class="text-header">
+              <li class="nav-item"style="margin-left:10px">
+                <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./about">ABOUT US</a>
+              </li>
+              </div>
+              <p></p>
+           
+            </ul>
+            <div class="d-flex" role="search">
+              <a href="" class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Order</a>
+              <a href="./login" class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Login </a>
+              <a href="./register" class="btn btn-outline-warning shadow-none text-white fw-bold fs-6 h-font">Register </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+        <!-- Header End -->
+
+	<section class="contact pt-100 pb-100" id="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-6 mx-auto text-center">
+					<div class="section-title mb-100">
+						<p>get in touch</p>
+						<h4>contact me</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-md-8">
+					<form action="#" class="contact-form" method="post">
+						<div class="row">
+							<div class="col-xl-6">
+								<input type="text" placeholder="name " name="name">
+							</div>
+							<div class="col-xl-6">
+								<input type="text" placeholder="email" name="email">
+							</div>
+							<div class="col-xl-6">
+								<input type="text" placeholder="subject" name="subject">
+							</div>
+							<div class="col-xl-6">
+								<input type="text" placeholder="telephone" name="telephone">
+							</div>
+							<div class="col-xl-12">
+								<textarea placeholder="message" name="message" cols="30" rows="10"></textarea>
+								<input class="btn  btn-primary bg-primary" type="submit" name="sendMessage" value="send message">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-4">
+					<div class="single-contact">
+						
+						<i class="  fa fa-map-marker"></i>
+						
+						<p class="fw-bold fs-6 h-font">Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.</p>
+					</div>
+					<div class="single-contact">
+						<i class="fa fa-phone"></i>
+						
+						<p class="fw-bold fs-6 h-font">(+84-24) 38272289</p>
+					</div>
+					<div class=" single-contact">
+						<i class="fa fa-envelope  "></i>
+						
+						<p class="fw-bold fs-6 h-font">Telesales@vietnamairlines.com</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	  
+    <footer class="footer-distributed bg-dark ">
+
+        <div class="footer-left">
+            <img class=" " src="images/Logo.png" alt="Image">
+          <a class="navbar-brand me-5 fw-bold fs-4 h-font "  href="index.php">VIETNAM<span>AIRLINE</span></a>
+           
+            <p class="footer-links">
+                <a href="#" class="link-1 fw-bold fs-6 h-font">Home</a>
+                
+                <a href="#" class=" fw-bold fs-6 h-font">Blog</a>
+            
+                <a href="#" class=" fw-bold fs-6 h-font">Pricing</a>
+            
+                <a href="#" class=" fw-bold fs-6 h-font">About</a>
+                
+                <a href="#" class=" fw-bold fs-6 h-font">Faq</a>
+                
+                <a href="#"class=" fw-bold fs-6 h-font">Contact</a>
+            </p>
+
+            <p class="footer-company-name fw-bold fs-6 h-font">© 2019 Vietnam Airlines JSC</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p class="fw-bold fs-6 h-font"><span class="fw-bold fs-6 h-font">Tổng công ty Hàng không Việt Nam - CTCP. </span> Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p class="fw-bold fs-8 h-font">(+84-24) 38272289</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p class="fw-bold fs-6 h-font"><a href="mailto: Telesales@vietnamairlines.co"> Telesales@vietnamairlines.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about fw-bold fs-6 h-font">
+                <span class="fw-bold fs-6 h-font">About the company</span>
+                Fly with us. We will always bring you the best flights.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                
+            </div>
+
+        </div>
+
+    </footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

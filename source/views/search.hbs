@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Search Flights</title>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Paytone+One" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style type="text/css">
+        .availability-form {
+            margin-top: -50px;
+            z-index: 2;
+            position: relative;
+        }
+
+        @media screen and (max-width: 575px) {
+            .availability-form {
+                margin-top: 25px;
+                padding: 0 35px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg   text-white px-lg-3 py-lg-0 shadow-sm sticky-top"
+        style="background:rgb(1, 15, 32)">
+        <div class="container-fluid">
+            <img class=" " src="images/Logo.png" alt="Image">
+            <a class="navbar-brand me-5 fw-bold fs-4 h-font " style="color:rgb(73, 142, 246)" href="./search">VIETNAM
+                AIRLINE</a>
+            <nav class="navbar  navbar-dark p-3 p-lg-0">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </nav>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:30px">
+                    <div class="text-header">
+                        <li class="nav-item " style="margin-left:10px">
+                            <a class=" nav-link active text-white fw-bold fs-6 h-font " aria-current="page"
+                                href="./search">HOME</a>
+                        </li>
+                    </div>
+                    <p></p>
+
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./services">SERVICES</a>
+                        </li>
+                    </div>
+                    <p></p>
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./contact">CONTACT US</a>
+                        </li>
+                    </div>
+                    <p></p>
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./about">ABOUT US</a>
+                        </li>
+                    </div>
+                    <p></p>
+
+                </ul>
+                <div class="d-flex" role="search">
+                    <a href="./ticket_code"
+                        class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Order</a>
+                    {{#if message}}
+                    <div class="greeting">
+                        <div class="dropdown text-right">
+                            <button class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person-circle"></i> {{message}}
+                            </button>
+                            
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-info-circle btn btn-outline-warning shadow-none text-dark fw-bold fs-6 h-font"></i>&nbsp;&nbsp;INFORMATION ACCOUNT
+                                </a>
+                                <a class="dropdown-item" href="/logout">
+                                    <i class="fas fa-sign-out-alt btn btn-outline-warning shadow-none text-dark fw-bold fs-6 h-font"></i>&nbsp;&nbsp; LOGOUT
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{else}}
+                    <a href="./login"
+                        class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Login</a>
+                    <a href="./register"
+                        class="btn btn-outline-warning shadow-none text-white fw-bold fs-6 h-font">Register</a>
+                    {{/if}}
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+    <!-- Header End -->
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100"
+                        src="http://vemaybayduhocsinh.com/wp-content/uploads/2017/03/dai-ly-ve-may-bay-cap-1-vietnam-airlines-e1502678242130.png"
+                        alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Vietnam
+                                Airline</h6>
+                            <h4 class="display-4 text-white mb-4 animated slideInDown">REACH FUTHER WITH US</h4>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Flight</a>
+                            <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Flight</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100"
+                        src="https://cafefcdn.com/thumb_w/650/203337114487263232/2023/1/22/photo1674397633959-16743976342531189671400.png"
+                        alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Vietnam
+                                Airline</h6>
+                            <h4 class="display-4 text-white mb-4 animated slideInDown">REACH FUTHER WITH US</h4>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Flight</a>
+                            <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A Flight</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100"
+                        src="https://media.vneconomy.vn/w800/images/upload/2022/03/15/mayub-14-58-34-116.jpg"
+                        alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 700px;">
+                            <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">Vietnam
+                                Airline</h6>
+                            <h4 class="display-4 text-white mb-4 animated slideInDown">REACH FUTHER WITH US</h4>
+                            <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Our Flight</a>
+                            <a href="#search" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Book A
+                                Flight</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Carousel End -->
+    <!-- Search -->
+    <div id="search" class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="bg-white shadow" style="padding: 35px;">
+                <div id="search-form">
+                    <form action="/search" method="post">
+                        <div class="row g-2">
+                            <div class="col-md-2">
+                                <input type="radio" id="one-way" name="trip_type" value="one-way">
+                                <label for="one-way">Một chiều</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="radio" id="round-trip" name="trip_type" value="round-trip" checked>
+                                <label for="round-trip">Khứ hồi</label>
+                            </div>
+
+                        </div>
+                        <div class="motchieu box">
+                            <div class="row g-2">
+                                <div class="col-md-10">
+                                    <div class="row g-2">
+                                        <div class="col-md-3">
+                                            <div class="from" id="from" data-target-input="nearest">
+                                                <select name="departureLocation" class="form-control" required>
+                                                    <option value="">From</option>
+                                                    <option value="Nội Bài - Hà Nội (HAN)">Sân bay Nội Bài - Hà Nội
+                                                        (HAN)</option>
+                                                    <option value="Cát Bi - Hải Phòng (HPH)">Sân bay Cát Bi - Hải Phòng
+                                                        (HPH)</option>
+                                                    <option value="Đà Nẵng - Đà Nẵng (DAD)">Sân bay Đà Nẵng - Đà Nẵng
+                                                        (DAD)</option>
+                                                    <option value="Cam Ranh - Khánh Hòa (CXR)">Sân bay Cam Ranh - Khánh
+                                                        Hòa (CXR)</option>
+                                                    <option value="Tân Sơn Nhất - Thành phố Hồ Chí Minh (SGN)">Sân bay
+                                                        Tân Sơn Nhất - Thành phố Hồ
+                                                        Chí Minh (SGN)</option>
+                                                    <option value="Phú Quốc - Kiên Giang (PQC)">Sân bay Phú Quốc - Kiên
+                                                        Giang (PQC)</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div>
+                                                <select name="arrivalLocation" class="form-control" required>
+                                                    <option value="">To:</option>
+                                                    <option value="Nội Bài - Hà Nội (HAN)">Sân bay Nội Bài - Hà Nội
+                                                        (HAN)</option>
+                                                    <option value="Cát Bi - Hải Phòng (HPH)">Sân bay Cát Bi - Hải Phòng
+                                                        (HPH)</option>
+                                                    <option value="Đà Nẵng - Đà Nẵng (DAD)">Sân bay Đà Nẵng - Đà Nẵng
+                                                        (DAD)</option>
+                                                    <option value="Cam Ranh - Khánh Hòa (CXR)">Sân bay Cam Ranh - Khánh
+                                                        Hòa (CXR)</option>
+                                                    <option value="Tân Sơn Nhất - Thành phố Hồ Chí Minh (SGN)">Sân bay
+                                                        Tân Sơn Nhất - Thành phố Hồ
+                                                        Chí Minh (SGN)</option>
+                                                    <option value="Phú Quốc - Kiên Giang (PQC)">Sân bay Phú Quốc - Kiên
+                                                        Giang (PQC)</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-3">
+                                            <div id="date1" data-target-input="nearest">
+                                                <input type="date" name="departureDate"
+                                                    class="form-control datetimepicker-input" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div id="arrival-date-container" data-target-input="nearest">
+                                                <input type="date" name="arrival_date"
+                                                    class="form-control datetimepicker-input"
+                                                    min="{{departureDatePlusOneDay}}" required>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <button id="search-button" type="submit"
+                                        class="btn btn-primary w-100">SEARCH</button>
+
+                                </div>
+                                <p></p>
+                                <div id="progress-bar-container">
+                                    <progress id="progress-bar" value="0" max="100"
+                                        style="margin-left:40%; margin-top:10px;width:20%"></progress>
+                                </div>
+                            </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search end -->
+
+    <!-- Service Start -->
+    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR SERVICES</h2>
+
+    <div class="container" id="service">
+        <div class="row justify-content-evenly px-lg-0 px-md-0 px-5">
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <div class="service-img">
+                    <img src="https://www.vietnamairlines.com/~/media/Images/HomeDashboard/icon_bag_actived.png"
+                        width="40px">
+                </div>
+                <h6 class="mt-4">Hành lý trả trước</h6>
+
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <div class="service-img">
+                    <img src="https://www.vietnamairlines.com/~/media/Images/HomeDashboard/icon_plane_actived.png"
+                        width="40px">
+                </div>
+                <h6 class="mt-4">Nâng hạng & Chọn chỗ</h6>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <div class="service-img">
+                    <img src="https://www.vietnamairlines.com/~/media/Images/HomeDashboard/icon_hotel_actived.png"
+                        width="40px">
+                </div>
+                <h6 class="mt-4">Khách sạn & Tour</h6>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <div class="service-img">
+                    <img src="https://www.vietnamairlines.com/~/media/Images/HomeDashboard/icon_shopping_actived.png"
+                        width="40px">
+                </div>
+                <h6 class="mt-4">Mua sắm</h6>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <div class="service-img">
+                    <img src="https://www.vietnamairlines.com/~/media/Images/HomeDashboard/icon_care_actived.png"
+                        width="40px">
+                </div>
+                <h6 class="mt-4">Bảo hiểm</h6>
+            </div>
+            <div class="col-lg-12 text-center mt-5">
+                <a href="#" class="btn btn-sm btn-outline-dark rounded rounded-0 fw-bold shadow-none">More Service
+                    >>></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service End -->
+
+    <!-- Destinations Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" id="ourroom" data-wow-delay="0.1s">
+                <h6 class="section-title text-center text-primary text-uppercase">OUR FLIGHT</h6>
+                <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">flight highlights</span></h1>
+            </div>
+            <div class="row g-4">
+
+                <div class="d-flex col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item ">
+                        <div class="box">
+                            <div class="hov-img">
+                                <img src="https://statics.vinpearl.com/hoi-an-ancient-town_1648356190.jpg" alt="">
+
+                            </div>
+                            <div class="box-text">
+                                <div class="text-price">
+                                    <a class="btn btn-sm btn-dark rounded py-2 px-4">$ 1 200 000</a>
+                                </div>
+
+                                <div class="text-in">
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="room.php">BOOK NOW</a>
+                                </div>
+                                <h6 class="count-text"><i class="fas fa-plane"></i> TP HCM - Hội An </h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="d-flex col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item ">
+                        <div class="box">
+                            <div class="hov-img">
+                                <img src="https://file1.dangcongsan.vn/data/0/images/2022/10/24/upload_37/abdffce43449f317aa58.jpg"
+                                    alt="">
+
+                            </div>
+                            <div class="box-text">
+                                <div class="text-price">
+                                    <a class="btn btn-sm btn-dark rounded py-2 px-4">$ 1 200 000</a>
+                                </div>
+
+                                <div class="text-in">
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="room.php">BOOK NOW</a>
+                                </div>
+                                <h6 class="count-text"><i class="fas fa-plane"></i> TP HCM - Nha Trang </h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="d-flex col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="room-item ">
+                        <div class="box">
+                            <div class="hov-img">
+                                <img src="https://suckhoedoisong.qltns.mediacdn.vn/zoom/600_315/324455921873985536/2022/1/8/tp-hcm-16416352848141945815887-0-0-506-810-crop-1641635295768121567283.jpeg"
+                                    alt="">
+
+                            </div>
+                            <div class="box-text">
+                                <div class="text-price">
+                                    <a class="btn btn-sm btn-dark rounded py-2 px-4">$ 1 200 000</a>
+                                </div>
+                                <div class="text-in">
+
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">BOOK NOW</a>
+                                </div>
+                                <h6 class="count-text"><i class="fas fa-plane"></i> Hà Nội - TP HCM</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item ">
+                        <div class="box">
+                            <div class="hov-img">
+                                <img src="https://media.vneconomy.vn/w800/images/upload/2022/10/04/phuquoc.jpg" alt="">
+
+                            </div>
+                            <div class="box-text">
+                                <div class="text-price">
+                                    <a class="btn btn-sm btn-dark rounded py-2 px-4">$ 1 200 000</a>
+                                </div>
+
+                                <div class="text-in">
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">BOOK NOW</a>
+                                </div>
+                                <h6 class="count-text"><i class="fas fa-plane"></i> TP HCM - Kiên Giang </h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="d-flex col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="room-item ">
+                        <div class="box">
+                            <div class="hov-img">
+                                <img src="https://dulichyenviet.com/wp-content/uploads/2023/02/vi-tri-dia-ly-hue.jpg"
+                                    alt="">
+
+                            </div>
+                            <div class="box-text">
+                                <div class="text-price">
+                                    <a class="btn btn-sm btn-dark rounded py-2 px-4">$ 1 200 000</a>
+                                </div>
+
+                                <div class="text-in">
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="room.php">BOOK NOW</a>
+                                </div>
+                                <h6 class="count-text"><i class="fas fa-plane"></i> TP HCM - Huế </h6>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="d-flex col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="room-item ">
+                        <div class="box">
+                            <div class="hov-img">
+                                <img src="http://docs.portal.danang.gov.vn/images/image/35fcfd4f-bc80-4fac-8452-deb69577b5a8_1666063758765.jpeg"
+                                    alt="">
+
+                            </div>
+                            <div class="box-text">
+                                <div class="text-price">
+                                    <a class="btn btn-sm btn-dark rounded py-2 px-4">$ 1 200 000</a>
+                                </div>
+                                <div class="text-in">
+
+                                    <a class="btn btn-sm btn-primary rounded py-2 px-4" href="room.php">BOOK NOW</a>
+                                </div>
+                                <h6 class="count-text"><i class="fas fa-plane"></i> TP HCM - Đà Nẵng</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Destination End -->
+    <!--  Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-4">
+                    <h6 class="section-title text-start text-primary text-uppercase">Explore</h6>
+                    <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase"> TOP DESTINATIONS</span></h1>
+                    <p class="mb-4">Những địa điểm đang hot nhất hiện nay và được mọi người đến nhiều nhất. Hãy cùng chúng tối đến và tận hưởng 
+                        vẻ đẹp của nó nào.
+                    </p>
+                    <div class="row g-3 pb-4">
+
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Explore More</a>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <div class="col-6 text-end ">
+                            <div class="explore-img">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s"
+                                    src="data:image/jpeg;base64,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"
+                                    style="margin-top: 25%;">
+                                <div
+                                    class="text-destination d-flex flex-column align-items-center justify-content-center">
+                                    <div class="p-3">
+                                        <p
+                                            class="section-destination text-white text-uppercase mb-3 animated slideInDown">
+                                            Vịnh Hạ Long</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 text-start">
+                            <div class="explore-img">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE8BxDV_6dlXWD626vX-m5IvuDUse1a1yAwg&usqp=CAU">
+                                <div
+                                    class="text-destination1 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="p-2">
+                                        <p class="section-destination text-white text-uppercase mb-3 animated slideInDown">
+                                            SaPa</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-6 text-end">
+                            <div class="explore-img">
+                                <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQywM-UwV8VE2pvKglXKbume8UTIFPqzFvQtA&usqp=CAU">
+                                <div
+                                    class="text-destination2 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="p-3">
+                                        <p
+                                            class="section-destination text-white text-uppercase mb-3 animated slideInDown">
+                                            Đà Lạt</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 text-start">
+                            <div class="explore-img">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIh14ZxaQIGY9OusVX4LBUTx3pbSRo7stW6A&usqp=CAU">
+                                <div
+                                    class="text-destination3 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="p-3  ">
+                                        <p
+                                            class="section-destination text-white text-uppercase mb-3 animated slideInDown">
+                                            Huế</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Destinations End -->
+
+
+
+    <!-- Footer Start -->
+
+
+    <footer class="footer-distributed bg-dark ">
+
+        <div class="footer-left">
+            <img class=" " src="images/Logo.png" alt="Image">
+            <a class="navbar-brand me-5 fw-bold fs-4 h-font " href="index.php">VIETNAM<span>AIRLINE</span></a>
+
+            <p class="footer-links">
+                <a href="#" class="link-1 fw-bold fs-6 h-font">Home</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Blog</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Pricing</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">About</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Faq</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Contact</a>
+            </p>
+
+            <p class="footer-company-name fw-bold fs-6 h-font">© 2019 Vietnam Airlines JSC</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p class="fw-bold fs-6 h-font"><span class="fw-bold fs-6 h-font">Tổng công ty Hàng không Việt Nam -
+                        CTCP. </span> Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p class="fw-bold fs-8 h-font">(+84-24) 38272289</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p class="fw-bold fs-6 h-font"><a href="mailto: Telesales@vietnamairlines.co">
+                        Telesales@vietnamairlines.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about fw-bold fs-6 h-font">
+                <span class="fw-bold fs-6 h-font">About the company</span>
+                Fly with us. We will always bring you the best flights.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                
+
+            </div>
+
+        </div>
+
+    </footer>
+    <!-- Footer End -->
+
+    <script>
+        const arrivalDateContainer = document.getElementById('arrival-date-container');
+        const tripTypeRadioButtons = document.querySelectorAll('input[name="trip_type"]');
+        const progressBar = document.getElementById('progress-bar');
+        const searchButton = document.getElementById('search-button');
+
+        function toggleArrivalDate() {
+            if (this.value === 'one-way') {
+                arrivalDateContainer.style.display = 'none';
+            } else {
+                arrivalDateContainer.style.display = 'block';
+            }
+        }
+
+        tripTypeRadioButtons.forEach(radioButton => {
+            radioButton.addEventListener('change', toggleArrivalDate);
+        });
+
+        const departureDateInput = document.querySelector('input[name="departureDate"]');
+        const arrivalDateInput = document.querySelector('input[name="arrival_date"]');
+
+        departureDateInput.addEventListener('change', () => {
+            const departureDate = new Date(departureDateInput.value);
+            const departureDatePlusOneDay = new Date(departureDate.getTime() + (24 * 60 * 60 * 1000));
+            arrivalDateInput.setAttribute('min', departureDatePlusOneDay.toISOString().slice(0, 10));
+        });
+
+        // Lấy thêm biến formElement để tránh truy xuất DOM nhiều lần
+        const formElement = document.querySelector('form');
+        formElement.addEventListener('submit', (event) => {
+            event.preventDefault();
+            progressBar.style.display = 'block';
+            progressBar.value = 0;
+            const intervalId = setInterval(() => {
+                progressBar.value += 5;
+                if (progressBar.value >= 100) {
+                    clearInterval(intervalId);
+                    // Sau 500ms chuyển trang để tránh progress bar vẫn còn chạy
+                    setTimeout(() => {
+                        formElement.submit();
+                    }, 500);
+                }
+            }, 100);
+        });
+
+    </script>
+</body>
+
+</html>

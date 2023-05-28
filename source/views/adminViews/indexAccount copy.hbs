@@ -1,0 +1,207 @@
+<div class="bg-light rounded h-20 p-4 mt-3 mr-5">
+    <button class="btn btn-outline-success text-success text fw-bold add-btn mb-1" data-toggle="modal"
+        data-target="#add-modal" data-id="{{this.id}}" data-name="{{this.name}}" data-email="{{this.email}}"
+        data-password="{{this.password}}" data-isadmin="{{this.isAdmin}}" data-lock="{{this.lock}}"> <i
+            class="bi bi-plus"></i>
+        <a class="text-success text fw-bold">Tạo mới</a></button>
+    </button>
+
+
+    <table class="table">
+        <thead>
+            <tr class="text-primary">
+                <th scope="col">#</th>
+                <th scope="col">Tên</th>
+                <th scope="col">Email</th>
+                <th scope="col">Quản trị </th>
+                <th scope="col">Khóa</th>
+                <th scope="col">Chỉnh sửa</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#if account}}
+            {{#each account}}
+            <tr>
+                <th scope="row">{{this.id}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td><input type="checkbox" value="{{this.isAdmin}}"></td>
+                <td><input type="checkbox" value="{{this.isAdmin}}"></td>
+                <td>
+                    <div class="d-flex flex-row"><button class="btn btn-primary edit-btn btn btn-sm btn-primary"
+                            data-toggle="modal" data-target="#edit-modal" data-id="{{this.id}}"
+                            data-name="{{this.name}}" data-email="{{this.email}}" data-password="{{this.password}}"
+                            data-isadmin="{{this.isAdmin}}" data-lock="{{this.lock}}">Sửa</button>|
+                        <form method="post" action="/admin/account/{{{this.id}}}/delete">
+                            <button class="btn btn-sm btn-danger" type="submit"
+                                onclick="return confirm('Are you sure you want to delete this account?')">Xóa</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {{/each}}
+            {{/if}}
+        </tbody>
+    </table>
+</div>
+<!-- Add modal -->
+<div class="modal fade" id="add-modal" tabindex="-1" role="dialog" aria-labelledby="add-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success" id="add-modal-label">Thêm mới</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="add-form" method="post">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-group">
+                        <label for="add-id">ID:</label>
+                        <input type="text" class="form-control" id="add-id" name="id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-name">Name:</label>
+                        <input type="text" class="form-control" id="add-name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-email">Email:</label>
+                        <input type="email" class="form-control" id="add-email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-password">Password:</label>
+                        <input type="text" class="form-control" id="add-password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-is-admin">Is Admin:</label>
+                        <select class="form-control" id="add-is-admin" name="isAdmin">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-lock">Lock:</label>
+                        <select class="form-control" id="add-lock" name="lock">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" form="add-form" class="btn btn-success">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Edit modal -->
+<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="edit-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-warning" id="edit-modal-label">Chỉnh sửa account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-form" method="post">
+                    <input type="hidden" name="_method" value="PUT">
+                    <div class="form-group">
+                        <label for="edit-id">ID:</label>
+                        <input type="text" class="form-control" id="edit-id" name="id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-name">Name:</label>
+                        <input type="text" class="form-control" id="edit-name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-email">Email:</label>
+                        <input type="email" class="form-control" id="edit-email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-password">Password:</label>
+                        <input type="text" class="form-control" id="edit-password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-is-admin">Is Admin:</label>
+                        <select class="form-control" id="edit-is-admin" name="isAdmin">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-lock">Lock:</label>
+                        <select class="form-control" id="edit-lock" name="lock">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" form="edit-form" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        var editModal = $('#edit-modal');
+        var addModal = $('#add-modal');
+        var editForm = $('#edit-form');
+        var addForm = $('#add-form');
+
+        $('.edit-btn').on('click', function () {
+
+            var id = $(this).data('id');
+            var name = $(this).data('name');
+            var email = $(this).data('email');
+            var password = $(this).data('password');
+            var isAdmin = $(this).data('isadmin');
+            var lock = $(this).data('lock');
+            var btn = $(this);
+            //fill data
+            $('#edit-id').val(id);
+            $('#edit-name').val(name);
+            $('#edit-email').val(email);
+            $('#edit-password').val(password);
+            if (isAdmin == 'true') {
+                $('#edit-isAdmin').prop('checked', true);
+            } else {
+                $('#edit-isAdmin').prop('checked', false);
+            }
+            if (lock == 'true') {
+                $('#edit-lock').prop('checked', true);
+            } else {
+                $('#edit-lock').prop('checked', false);
+            }
+            var newAction = '/admin/account/edit/' + id;
+            editForm.attr('action', newAction);
+
+        });
+        $('.add-btn').on('click', function () {
+
+            addForm.attr('action', '/admin/account/add')
+        });
+
+
+
+    });
+</script>

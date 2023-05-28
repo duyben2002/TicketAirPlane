@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>THÔNG TIN CHUYẾN BAY</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-image: url('https://cafefcdn.com/zoom/700_438/203337114487263232/2023/1/22/photo1674397633959-16743976342531189671400.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        body:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(15, 23, 43, .7);
+            z-index: -1;
+            opacity: .80;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg   text-white px-lg-3 py-lg-0 shadow-sm sticky-top"
+        style="background:rgb(1, 15, 32)">
+        <div class="container-fluid">
+            <img class=" " src="images/Logo.png" alt="Image">
+            <a class="navbar-brand me-5 fw-bold fs-4 h-font " style="color:rgb(73, 142, 246)" href="./search">VIETNAM
+                AIRLINE</a>
+            <nav class="navbar  navbar-dark p-3 p-lg-0">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </nav>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:30px">
+                    <div class="text-header">
+                        <li class="nav-item " style="margin-left:10px">
+                            <a class=" nav-link active text-white fw-bold fs-6 h-font " aria-current="page"
+                                href="./search">HOME</a>
+                        </li>
+                    </div>
+                    <p></p>
+
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./services">SERVICES</a>
+                        </li>
+                    </div>
+                    <p></p>
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./contact">CONTACT US</a>
+                        </li>
+                    </div>
+                    <p></p>
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./about">ABOUT US</a>
+                        </li>
+                    </div>
+                    <p></p>
+
+                </ul>
+                <div class="d-flex" role="search">
+                    <a href=""
+                        class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Order</a>
+                    <a href="./login"
+                        class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Login
+                    </a>
+                    <a href="./register"
+                        class="btn btn-outline-warning shadow-none text-white fw-bold fs-6 h-font">Register </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Header End -->
+    <div class="container ">
+        <form action="/bookings" method="post" id="booking-form">
+            <div class="row">
+                <div class="row g-4"></div>
+
+
+
+
+                <div class="col-lg-4 col-md-8 px-4 mx-auto">
+                    <div class="col-lg-12 md-12 " style="margin-top:20px">
+                        <h5 class="text-primary text-uppercase" style="margin-left:0%">Thông tin chuyến bay</h5>
+                    </div>
+
+                    <div class="card mb-4 border-0">
+                        <div class="col-lg-12 col-md-12 align-items-center">
+                            <h3 class=" text-center fw-bold fs-6 h-font text-dark" style="margin-top: 10px;"> <span
+                                    id="departure"></span> <i class="fas fa-plane"
+                                    style="margin-right:10px; margin-left:10px"></i> <span id="arrival"></span></h3>
+                            <h3 class=" text-center fw-bold fs-6 h-font text-dark" style="margin-top: 10px;"> <span
+                                    id="time"></span> - <span id="time2"></span> </h3>
+
+                        </div>
+                        <div class="col-lg-12 col-md-12 align-items-center">
+                            <hr width="90%" style="color:black;margin-left:5%" />
+                        </div>
+                        <div class="col-lg-12 col-md-12 align-items-center">
+
+                            <img class=" w-15" src="images/Logo.png" alt="Image">
+                            <span class="fw-bold fs-10 h-font text-center text-dark" style="margin-left:10px"
+                                id="airline"></span>
+
+
+                        </div>
+                        <div class='row g-0 p-3 align-items-center '>
+
+                            <div class="col-lg-4 col-md-4">
+
+                                <div class="col-lg-12"><a class=" fw-bold fs-6 h-font"><span id="time3"></span></a>
+                                </div>
+                                <div class="col-lg-12" style="margin-top:5px;margin-bottom:0px">
+                                    <a class=" fw-bold fs-6 h-font"><i class="fa fa-plane-departure"
+                                            style="margin-left:5px"></i> </a>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-12">
+                                    <a class=" fw-bold fs-8 h-font" style="text-align:center"><span
+                                            id="temp"></span></a>
+
+                                </div>
+                                <div class="col-lg-12 align-items-center">
+                                    <hr width="45%" style="color:black" />
+                                </div>
+                                <div class="col-lg-12">
+                                    <a class=" fw-bold fs-8 h-font" style="text-align:center"><span
+                                            id="type"></span></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4">
+                                <div class="col-lg-12"><a class=" fw-bold fs-6 h-font"><span id="time4"></span></a>
+                                </div>
+                                <div class="col-lg-12" style="margin-top:5px;margin-bottom:10px">
+                                    <a class=" fw-bold fs-6 h-font"><i class="fa fa-plane-arrival"
+                                            style="margin-left:5px"></i> </a>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-8 col-md-8 px-4 mx-auto">
+                    <div class="col-lg-12 md-12 " style="margin-top:20px">
+                        <h5 class="text-primary text-uppercase" style="margin-bottom:10px">Thông tin đặt vé</h5>
+                    </div>
+                    <div class="card mb-4 border-0">
+
+                        <div class='row g-0 p-3 align-items-center '>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 " style="margin-right:5%; margin-left:2%">
+                                <label class=" fw-bold fs-6 h-font text-dark" for="adults">Chọn số lượng người
+                                    lớn:</label>
+                                <input type="number" id="adults" name="adults" min="1" max="10" value="1"
+                                    class="form-control ">
+
+                                <label class=" fw-bold fs-6 h-font text-dark" for="children">Chọn số lượng trẻ
+                                    em:</label>
+                                <input type="number" id="children" name="children" min="0" max="10" value="0"
+                                    class="form-control ">
+
+                                <label class=" fw-bold fs-6 h-font text-dark" for="infants">Chọn số lượng trẻ sơ
+                                    sinh:</label>
+                                <input type="number" id="infants" name="infants" min="0" max="10" value="0"
+                                    class="form-control ">
+
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <hr width="1" size="200" style="color:black">
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style=" ">
+
+                                <a class=" fw-bold fs-6 h-font text-dark " style="margin-left:2% ">Giá 1 vé x 1 = <span
+                                        id="price"></span></a>
+                                <p></p>
+                                <a class=" fw-bold fs-6 h-font text-dark " style="margin-left:2% ">Tổng giá vé: <span
+                                        id="total"></span></a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 md-12 " style="margin-top:20px">
+                        <h5 class="text-primary text-uppercase" style="margin-bottom:10px">Thông tin liên hệ</h5>
+                    </div>
+                    <div class="card mb-4 border-0">
+
+                        <div class='row g-0 p-3 align-items-center '>
+
+                            <div class="col-lg-5 col-md-5" style="margin-right:5%; margin-left:2%">
+                                <label class=" fw-bold fs-6 h-font text-dark" for="fullname">Họ và tên:</label>
+                                <input type="text" id="fullname" name="fullname" class="form-control " required>
+
+                            </div>
+
+
+                            <div class="col-lg-5 col-md-5" style="margin-right:5%; margin-left:2% ">
+                                <label class=" fw-bold fs-6 h-font text-dark" for="gender">Giới tính:</label>
+                                <select id="gender" name="gender" class="form-control">
+                                    <option value="male">Nam</option>
+                                    <option value="female">Nữ</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-5 col-md-5" style="margin-right:5%; margin-left:2%">
+                                <label class=" fw-bold fs-6 h-font text-dark" for="email">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+
+                            </div>
+
+
+                            <div class="col-lg-5 col-md-3" style="margin-right:5%; margin-left:2% ">
+                                <label class=" fw-bold fs-6 h-font text-dark" for="phone" pattern="\d{10,11}"
+                                    required>Số điện thoại:</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 md-12 " style="margin-top:20px">
+                        <h5 class="text-primary text-uppercase" style="margin-bottom:10px">Thông tin hành khách</h5>
+                    </div>
+                    <div class="card mb-4 border-0">
+
+                        <div class='row g-0 p-3 align-items-center '>
+
+
+
+
+                            <div id="passenger-info"></div>
+                            <p>
+                                <p />
+                        </div>
+                    </div>
+                    <div class=" col-lg-12 col-md-12 col-sm-12">
+                        <button class="btn btn-sm btn-primary rounded  fs-8 h-font text-dark"type="submit"
+                            style="margin-right:15%; margin-left:89%;margin-bottom:30px; width:90px; height:50px">Đặt
+                            vé</button>
+                    </div>
+                </div>
+
+            </div>
+
+    </div>
+
+    </div>
+    </div>
+    </form>
+    </div>
+    <div id="spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+
+    <footer class="footer-distributed bg-dark ">
+
+        <div class="footer-left">
+            <img class=" " src="images/Logo.png" alt="Image">
+            <a class="navbar-brand me-5 fw-bold fs-4 h-font " href="index.php">VIETNAM<span>AIRLINE</span></a>
+
+            <p class="footer-links">
+                <a href="#" class="link-1 fw-bold fs-6 h-font">Home</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Blog</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Pricing</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">About</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Faq</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Contact</a>
+            </p>
+
+            <p class="footer-company-name fw-bold fs-6 h-font">© 2019 Vietnam Airlines JSC</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p class="fw-bold fs-6 h-font"><span class="fw-bold fs-6 h-font">Tổng công ty Hàng không Việt Nam -
+                        CTCP. </span> Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p class="fw-bold fs-8 h-font">(+84-24) 38272289</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p class="fw-bold fs-6 h-font"><a href="mailto: Telesales@vietnamairlines.co">
+                        Telesales@vietnamairlines.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about fw-bold fs-6 h-font">
+                <span class="fw-bold fs-6 h-font">About the company</span>
+                Fly with us. We will always bring you the best flights.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+               
+
+            </div>
+
+        </div>
+
+    </footer>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const price = urlParams.get('price');
+        const airline = urlParams.get('airline');
+        const departure = urlParams.get('departure_location');
+        const arrival = urlParams.get('arrival_location');
+        const time = urlParams.get('departure_date');
+        const time2 = urlParams.get('arrival_date');
+        const time3 = urlParams.get('departure_time');
+        const time4 = urlParams.get('arrival_time');
+        const temp = urlParams.get('temp');
+        const type = urlParams.get('type');
+        const form = document.querySelector('form');
+
+        // Hiển thị giá vé trong trang
+        document.getElementById('price').innerText = price;
+        document.getElementById('airline').innerText = airline;
+        document.getElementById('departure').innerText = departure;
+        document.getElementById('arrival').innerText = arrival;
+        document.getElementById('time').innerText = time;
+        document.getElementById('time2').innerText = time2;
+        document.getElementById('time3').innerText = time3;
+        document.getElementById('time4').innerText = time4;
+        document.getElementById('temp').innerText = temp;
+        document.getElementById('type').innerText = type;
+
+
+     const adultForm = `
+        <hr  size = "5" width="60%" style="color:black; margin-left:20%" />
+        <p><p/>
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            
+            <select id="adult-gender" name="adult-gender"class="form-control">
+                <option value="male">Ông</option>
+                <option value="female">Bà</option>
+            </select>
+    
+        </div>
+        <p></P>
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            <label class="fw-bold fs-6 h-font text-dark" for="adult-name">Họ và tên:</label>
+            <input type="text" id="adult-name" name="adult-name"class="form-control">
+        </div>
+         <p><p/>
+        </div>
+        <p><p/>
+        
+
+`;
+
+        const childForm = `
+       
+        <hr  size = "5" width="60%" style="color:black; margin-left:20%" />
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            
+            <select id="child-gender" name="child-gender"class="form-control">
+                <option value="male">Trẻ em trai</option>
+                <option value="female">Trẻ em gái</option>
+            </select>
+    
+        </div>
+        <p></P>
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            <label class="fw-bold fs-6 h-font text-dark" for="child-name">Họ và tên:</label>
+            <input type="text" id="child-name" name="child-name"class="form-control">
+        </div>
+        <p></P>
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            <label class="fw-bold fs-6 h-font text-dark" for="child-dob">Ngày tháng năm sinh:</label>
+            <input type="date" id="child-dob" name="child-dob" class="form-control">
+        </div>
+         <p><p/>
+        </div>
+        <p><p/>
+`;
+
+        const infantForm = `
+         <hr  size = "5" width="60%" style="color:black; margin-left:20%" />
+        <p><p/>
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            
+           <select id="gender" name="gender"class="form-control">
+                <option value="boy">Em bé trai</option>
+                <option value="girl">Em bé gái</option>
+            </select>
+    
+        </div>
+        <p></P>
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            <label class="fw-bold fs-6 h-font text-dark" for="infant-name">Họ tên:</label>
+            <input type="text" id="infant-name" name="infant-name"class="form-control">
+        </div>
+        <p><p/>
+        <div class="col-lg-9 col-md-3" style="margin-right:15%; margin-left:13%">
+            <label class="fw-bold fs-6 h-font text-dark" for="birthdate">Ngày tháng năm sinh:</label>
+            <input type="date" id="birthdate" name="birthdate"class="form-control">
+        </div>
+         <p><p/>
+        </div>
+       
+        
+        
+`;
+        const fullnameInput = document.getElementById("fullname");
+
+        fullnameInput.addEventListener("input", function () {
+            const inputText = this.value.trim();
+            const inputWords = inputText.split(" ");
+
+            if (inputWords.length < 2) {
+                this.setCustomValidity("Họ và tên không hợp lệ");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+
+        const passengerInfo = document.getElementById('passenger-info');
+
+        const updatePassengerInfo = () => {
+            const adults = parseInt(document.getElementById('adults').value);
+            const children = parseInt(document.getElementById('children').value);
+            const infants = parseInt(document.getElementById('infants').value);
+
+            // Xóa các form thông tin hành khách hiện có
+            passengerInfo.innerHTML = '';
+
+            // Thêm các form thông tin hành khách mới
+            for (let i = 0; i < adults; i++) {
+                passengerInfo.insertAdjacentHTML('beforeend', adultForm);
+            }
+            for (let i = 0; i < children; i++) {
+                passengerInfo.insertAdjacentHTML('beforeend', childForm);
+            }
+            for (let i = 0; i < infants; i++) {
+                passengerInfo.insertAdjacentHTML('beforeend', infantForm);
+            }
+        };
+        updatePassengerInfo();
+        // Gọi phương thức updatePassengerInfo khi có thay đổi số lượng hành khách
+        document.getElementById('adults').addEventListener('change', updatePassengerInfo);
+        document.getElementById('children').addEventListener('change', updatePassengerInfo);
+        document.getElementById('infants').addEventListener('change', updatePassengerInfo);
+
+
+
+        // Tính tổng tiền và hiển thị giá tiền sau khi người dùng chọn số lượng hành khách
+        const calculateTotal = () => {
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const infants = document.getElementById('infants').value;
+            const adultPrice = parseInt(price);
+            const childPrice = 0.75 * adultPrice;
+            const infantPrice = 110;
+            const total = (adultPrice * adults + childPrice * children + infantPrice * infants) + "000";
+            const formattedTotal = (parseInt(total)).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+            document.getElementById('total').innerText = `${formattedTotal}`;
+
+        };
+
+
+        document.addEventListener('DOMContentLoaded', calculateTotal);
+
+        // Gọi phương thức calculateTotal khi có thay đổi số lượng hành khách
+        document.getElementById('adults').addEventListener('change', calculateTotal);
+        document.getElementById('children').addEventListener('change', calculateTotal);
+        document.getElementById('infants').addEventListener('change', calculateTotal);
+
+        // Thêm sự kiện submit cho form
+        document.getElementById('booking-form').addEventListener('submit', (event) => {
+            event.preventDefault(); // Ngăn chặn việc submit form mặc định
+            const adults = document.getElementById('adults').value;
+            const children = document.getElementById('children').value;
+            const infants = document.getElementById('infants').value;
+            const total = document.getElementById('total').innerText;
+            const fullname = document.getElementById('fullname').value;
+            const gender = document.getElementById('gender').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            // Hiển thị hộp thoại xác nhận
+            const confirmed = confirm('Bạn có muốn xác nhận đặt vé?');
+            if (confirmed) {
+                // Gửi thông tin vé lên server thông qua AJAX
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', '/bookings');
+                xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        // Xử lý khi đặt vé thành công
+                        console.log(xhr.responseText);
+                        // Hiển thị vòng xoay tròn
+                        spinner.style.display = 'block';
+
+                        // Chờ 2 giây, sau đó chuyển sang trang confirmation
+                        setTimeout(function () {
+                            // Ẩn vòng xoay tròn
+                            spinner.style.display = 'none';
+
+                            // Chuyển sang trang confirmation
+                            window.location.href = '/confirmation?email=' + email;
+                        }, 2000);
+
+
+                    } else {
+                        // Xử lý khi đặt vé thất bại
+                        console.error(xhr.responseText);
+                        alert('Đặt vé thất bại! Vui lòng thử lại sau.');
+                    }
+                };
+
+                // Gửi thông tin vé lên server
+                xhr.send(JSON.stringify({
+                    adults,
+                    children,
+                    infants,
+                    total,
+                    fullname,
+                    gender,
+                    email,
+                    phone
+                }));
+            }
+        });
+    </script>
+
+</body>
+
+</html>

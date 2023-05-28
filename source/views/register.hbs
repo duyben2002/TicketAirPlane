@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css    ">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .well {
+      background: rgba(0, 0, 0, 0.7);
+      border: none;
+      height: 580px;
+      text-align: center;
+      margin-top: 8%;
+      margin-bottom: 15%;
+    }
+
+    body {
+      background-image: url('https://cafefcdn.com/zoom/700_438/203337114487263232/2023/1/22/photo1674397633959-16743976342531189671400.png');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+
+    }
+
+    body:before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 150%;
+      left: 0;
+
+      background-color: rgba(15, 23, 43, .7);
+      z-index: -1;
+      opacity: .80;
+
+    }
+
+    .footer-distributed {
+
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 118%;
+      margin-left: -114px;
+      margin-top: 80px;
+      margin-right: 10px;
+      text-align: left;
+      font: bold 16px sans-serif;
+      padding: 55px 50px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    /* Footer left */
+
+    .footer-distributed .footer-left {
+      width: 40%;
+    }
+
+    /* The company logo */
+
+    .footer-distributed a {
+      color: #ffffff;
+
+      margin: 0;
+    }
+
+    .footer-distributed a span {
+      color: rgb(73, 142, 246);
+    }
+
+    /* Footer links */
+
+    .footer-distributed .footer-links {
+      color: #ffffff;
+      margin: 20px 0 12px;
+      padding: 0;
+    }
+
+    .footer-distributed .footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+      color: #e8e2e2;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    /* Footer Center */
+
+    .footer-distributed .footer-center {
+      width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+      background-color: #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+      font-size: 17px;
+      line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+      display: inline-block;
+      color: #ffffff;
+      font-weight: 400;
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+      color: lightseagreen;
+      text-decoration: none;
+      ;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "|";
+      font-weight: 300;
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    /* Footer Right */
+
+    .footer-distributed .footer-right {
+      width: 20%;
+    }
+
+    .footer-distributed .footer-company-about {
+      line-height: 20px;
+      color: #92999f;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+      margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color: #ebeeef;
+      border-radius: 2px;
+
+      font-size: 20px;
+      color: #0e1427;
+      text-align: center;
+      line-height: 35px;
+
+      margin-right: 3px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg   text-white px-lg-3 py-lg-0 shadow-sm sticky-top"
+    style="background:rgb(1, 15, 32)">
+    <div class="container-fluid">
+      <img class=" " src="images/Logo.png" alt="Image">
+      <a class="navbar-brand me-5 fw-bold fs-4 h-font " style="color:rgb(73, 142, 246)" href="./search">VIETNAM
+        AIRLINE</a>
+      <nav class="navbar  navbar-dark p-3 p-lg-0">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      </nav>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:30px">
+          <div class="text-header">
+            <li class="nav-item " style="margin-left:10px">
+              <a class=" nav-link active text-white fw-bold fs-6 h-font " aria-current="page" href="./search">HOME</a>
+            </li>
+          </div>
+          <p></p>
+
+          <div class="text-header">
+            <li class="nav-item" style="margin-left:10px">
+              <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./services">SERVICES</a>
+            </li>
+          </div>
+          <p></p>
+          <div class="text-header">
+            <li class="nav-item" style="margin-left:10px">
+              <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./contact">CONTACT US</a>
+            </li>
+          </div>
+          <p></p>
+          <div class="text-header">
+            <li class="nav-item" style="margin-left:10px">
+              <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./about">ABOUT US</a>
+            </li>
+          </div>
+          <p></p>
+
+        </ul>
+        <div class="d-flex" role="search">
+          <a href="" class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Order</a>
+          <a href="./login"
+            class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Login </a>
+          <a href="./register" class="btn btn-outline-warning shadow-none text-white fw-bold fs-6 h-font">Register </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Header End -->
+
+
+  <!-- buộc toàn bộ dòng và cột phải bỏ trong class container -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-5 well">
+        <h5 class="text-center my-4 text-light fw-bold fs-4 h-font">Account Registration</h5>
+        <div class="border p-3 rounded ">
+          <form method="POST" id="form-register">
+            <div>
+              <input type="text" class="d-none" name="_csrf" value="{{csrf}}">
+            </div>
+            <div class="form-group">
+              <label for="user"></label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                    <i class="fas fa-user mb-3"></i>
+                  </span>
+                </div>
+                <input id="name" type="text" class="form-control" name="name" placeholder="Your Name">
+              </div>
+
+              <div class="form-group">
+                <label for="user"></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-user mb-3"></i>
+                    </span>
+                  </div>
+                  <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+
+              </div>
+              <div class="form-group">
+                <label for="pass"></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-lock mb-3"></i>
+                    </span>
+                  </div>
+                  <input type="password" id="password" class="form-control" name="password" placeholder="Password">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="pass"></label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="fas fa-lock mb-3"></i>
+                    </span>
+                  </div>
+                  <input type="password" id="confirm-password" class="form-control" name="confirm-password"
+                    placeholder="Confirm password">
+                </div>
+              </div>
+              <div class="form-group" id="alter-message">
+                {{#if flash}}
+                <div class="alert alert-danger alert-dismissible fade show">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  {{flash.message}}
+                </div>
+                {{/if}}
+              </div>
+              <br>
+              <div class="form-group">
+                <button id="btn-register" class="btn btn-success px-5" type="button">Register</button>
+              </div>
+              <div class="form-group">
+                <p>Already have an account? <a href="/login">Login now!</a></p>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer-distributed bg-dark ">
+
+    <div class="footer-left">
+      <img class=" " src="images/Logo.png" alt="Image">
+      <a class="navbar-brand me-5 fw-bold fs-4 h-font " href="index.php">VIETNAM<span>AIRLINE</span></a>
+
+      <p class="footer-links">
+        <a href="#" class="link-1 fw-bold fs-6 h-font">Home</a>
+
+        <a href="#" class=" fw-bold fs-6 h-font">Blog</a>
+
+        <a href="#" class=" fw-bold fs-6 h-font">Pricing</a>
+
+        <a href="#" class=" fw-bold fs-6 h-font">About</a>
+
+        <a href="#" class=" fw-bold fs-6 h-font">Faq</a>
+
+        <a href="#" class=" fw-bold fs-6 h-font">Contact</a>
+      </p>
+
+      <p class="footer-company-name fw-bold fs-6 h-font">© 2019 Vietnam Airlines JSC</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p class="fw-bold fs-6 h-font"><span class="fw-bold fs-6 h-font">Tổng công ty Hàng không Việt Nam - CTCP.
+          </span> Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p class="fw-bold fs-8 h-font">(+84-24) 38272289</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p class="fw-bold fs-6 h-font"><a href="mailto: Telesales@vietnamairlines.co"> Telesales@vietnamairlines.com</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about fw-bold fs-6 h-font">
+        <span class="fw-bold fs-6 h-font">About the company</span>
+        Fly with us. We will always bring you the best flights.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+       
+
+      </div>
+
+    </div>
+
+  </footer>
+  <!-- footer end -->
+
+  <script>
+    $(document).ready(() => {
+      $('#btn-register').click(() => {
+        var err
+        if ($('#name').val() == "")
+          err = 'Chưa nhập họ và tên!'
+        else if ($('#email').val() == "")
+          err = 'Chưa nhập email!'
+        else if (!isEmail($('#email').val()))
+          err = 'Email không hợp lệ!'
+        else if ($('#password').val() == "")
+          err = 'Chưa nhập mật khẩu!'
+        else if ($('#password').val().length < 6)
+          err = 'Mật khẩu phải ít nhất 6 ký tự!'
+        else if ($('#confirm-password').val() == "")
+          err = 'Chưa nhập xác nhận mật khẩu!'
+        else if ($('#confirm-password').val() != $('#password').val())
+          err = 'Mật khẩu không trùng khớp!'
+        if (err) {
+          $('#alter-message').html('<div class="alert alert-danger alert-dismissible fade show">' +
+            '<button id="btn-close" type="button" class="close" data-dismiss="alert">&times;</button>' +
+            err)
+        }
+        else
+          $('#form-register').submit()
+      })
+    })
+
+    function isEmail(email) {
+      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      return regex.test(email);
+    }
+  </script>
+
+</body>
+
+</html>

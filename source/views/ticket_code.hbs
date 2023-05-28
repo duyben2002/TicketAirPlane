@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>vietnamairlines</title>
+
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-image: url('https://cafefcdn.com/zoom/700_438/203337114487263232/2023/1/22/photo1674397633959-16743976342531189671400.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        body:before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(15, 23, 43, .7);
+            z-index: -1;
+            opacity: .80;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg   text-white px-lg-3 py-lg-0 shadow-sm sticky-top"
+        style="background:rgb(1, 15, 32)">
+        <div class="container-fluid">
+            <img class=" " src="images/Logo.png" alt="Image">
+            <a class="navbar-brand me-5 fw-bold fs-4 h-font " style="color:rgb(73, 142, 246)" href="./search">VIETNAM
+                AIRLINE</a>
+            <nav class="navbar  navbar-dark p-3 p-lg-0">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </nav>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left:30px">
+                    <div class="text-header">
+                        <li class="nav-item " style="margin-left:10px">
+                            <a class=" nav-link active text-white fw-bold fs-6 h-font " aria-current="page"
+                                href="./search">HOME</a>
+                        </li>
+                    </div>
+                    <p></p>
+
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./services">SERVICES</a>
+                        </li>
+                    </div>
+                    <p></p>
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./contact">CONTACT US</a>
+                        </li>
+                    </div>
+                    <p></p>
+                    <div class="text-header">
+                        <li class="nav-item" style="margin-left:10px">
+                            <a class="nav-link me-2 text-white fw-bold fs-6 h-font" href="./about">ABOUT US</a>
+                        </li>
+                    </div>
+                    <p></p>
+
+                </ul>
+                <div class="d-flex" role="search">
+                    <a href=""
+                        class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Order</a>
+                    <a href="./login"
+                        class="btn btn-outline-warning shadow-none me-lg-3 me-2 text-white fw-bold fs-6 h-font">Login
+                    </a>
+                    <a href="./register"
+                        class="btn btn-outline-warning shadow-none text-white fw-bold fs-6 h-font">Register </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Header End -->
+
+    <div class="container ">
+        <div class="row">
+            <div class="row g-4"></div>
+
+
+
+            <div class="col-lg-6 col-md-12 px-4 mx-auto" style="margin-top:40px;margin-bottom:250px">
+                <div class="card mb-4 border-0">
+                    <div class='row g-0 p-3 align-items-center '>
+                        <div class="text-center wow fadeInUp" style="margin-top:20px;margin-bottom:20px" id="ourflight"
+                            data-wow-delay="0.1s">
+                            <div class="col-lg-12 md-12 align-items-center">
+
+                                <h4 class="text-center text-primary text-uppercase"> ĐẶT CHỖ CỦA TÔI</h4>
+                            </div>
+
+                        </div>
+
+                        {{#if error}}
+                        <p style="color: red;">{{error}}</p>
+                        {{/if}}
+                        <form method="POST" action="/ticket_code">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-11 col-md-11 " style="margin-left:5%;margin-right:5%">
+                                    <input type="text" name="code" class="form-control"
+                                        placeholder="Vui lòng nhập mã đặt chỗ">
+                                </div>
+                                <div class="col-lg-3 col-md-3"
+                                    style="margin-left:45%;margin-right:50%; margin-top:30px; margin-bottom:20px">
+                                    <button class="btn btn-sm btn-primary rounded  fs-6 h-font text-dark"
+                                        type="submit">Tìm kiếm</button>
+                                </div>
+
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <footer class="footer-distributed bg-dark ">
+
+        <div class="footer-left">
+            <img class=" " src="images/Logo.png" alt="Image">
+            <a class="navbar-brand me-5 fw-bold fs-4 h-font " href="index.php">VIETNAM<span>AIRLINE</span></a>
+
+            <p class="footer-links">
+                <a href="#" class="link-1 fw-bold fs-6 h-font">Home</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Blog</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Pricing</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">About</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Faq</a>
+
+                <a href="#" class=" fw-bold fs-6 h-font">Contact</a>
+            </p>
+
+            <p class="footer-company-name fw-bold fs-6 h-font">© 2019 Vietnam Airlines JSC</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p class="fw-bold fs-6 h-font"><span class="fw-bold fs-6 h-font">Tổng công ty Hàng không Việt Nam -
+                        CTCP. </span> Số 200 Nguyễn Sơn, P.Bồ Đề, Q.Long Biên, Hà Nội.</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p class="fw-bold fs-8 h-font">(+84-24) 38272289</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p class="fw-bold fs-6 h-font"><a href="mailto: Telesales@vietnamairlines.co">
+                        Telesales@vietnamairlines.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about fw-bold fs-6 h-font">
+                <span class="fw-bold fs-6 h-font">About the company</span>
+                Fly with us. We will always bring you the best flights.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              
+            </div>
+
+        </div>
+
+    </footer>
+</body>
+
+
+</html>
